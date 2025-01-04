@@ -124,8 +124,10 @@ const getLastPostseasonGame = (season: number, teamId: number) => {
       .then((json) => {
         const { dates } = json;
 
+        // @ts-ignore
         let postSeasonGames = dates.map((date) => {
             return date.games
+            // @ts-ignore
               .map((game) => {
                 if (
                   game.teams.away.team.id === teamId ||
@@ -134,8 +136,10 @@ const getLastPostseasonGame = (season: number, teamId: number) => {
                   return game;
                 }
               })
+              // @ts-ignore
               .filter((game) => game);
           })
+          // @ts-ignore
           .filter((date) => date.length > 0);
 
         if (postSeasonGames.length > 0) {
@@ -167,9 +171,11 @@ const getLastRegularSeasonGame = (teamId: number) => {
 const getLastGameId = (season: number, teamId: number) => {
   return new Promise((resolve, reject) => {
     getLastPostseasonGame(season, teamId)
+      // @ts-ignore
       .then((response) => resolve(response.gamePk))
       .catch(() => {
         getLastRegularSeasonGame(teamId)
+          // @ts-ignore
           .then((response) => resolve(response.gamePk))
           .catch((e) => reject(e));
       });

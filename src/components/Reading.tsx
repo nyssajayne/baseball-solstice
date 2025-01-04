@@ -1,4 +1,5 @@
 import type { Positions } from './../js/solstice.d';
+import classes from './Diamond.module.css';
 
 const nthNumber = (number: number) => {
   if (number > 3 && number < 21) return "th";
@@ -25,15 +26,16 @@ const formatDate = (originalDate: Date) => {
 	return `${day}, ${month} ${date}${ordinal} ${year}, ${time}`;
 }
 
-function Reading(props: { positions: Positions, name: string }) {
-	const { name, positions } = props;
+function Reading(props: { positions: Positions, name: string, nextPlayTime: Date }) {
+	const { name, nextPlayTime, positions } = props;
 
 	return(
 		<>
 			<h3>Baseball Solstice Dates for the {name}</h3>
-			<p><span>First Base Solstice:</span> {formatDate(positions.firstSolstice)}</p>
-			<p><span>Second Base Solstice:</span> {formatDate(positions.secondSolstice)}</p>
-			<p><span>Third Base Solstice:</span> {formatDate(positions.thirdSolstice)}</p>
+			<p className={`${classes.firstBase} ${classes.date}`}><span>First Base Solstice:</span> {formatDate(positions.firstSolstice)}</p>
+			<p className={`${classes.secondBase} ${classes.date}`}><span>Second Base Solstice:</span> {formatDate(positions.secondSolstice)}</p>
+			<p className={`${classes.thirdBase} ${classes.date}`}><span>Third Base Solstice:</span> {formatDate(positions.thirdSolstice)}</p>
+			<p className={`${classes.homeBase} ${classes.date}`}><span>Opening Day:</span> {formatDate(nextPlayTime)}</p>
 		</>
 	)
 }

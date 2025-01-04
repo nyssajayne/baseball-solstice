@@ -1,11 +1,21 @@
 @import url('Teams.module.css');
 
+:root {
+	--animation-speed: 12s;
+	--firstBase-animation-delay: 2.85s;
+	--secondBase-animation-delay: 5.85s;
+	--thirdBase-animation-delay: 8.85s;
+	--homeBase-animation-delay: 11.85s;
+	--offset-amount: 0;
+	--stroke-amount: 0;
+}
+
 .wrapper {
 	align-items: center;
 	display: flex;
 	gap: 1rem;
 	margin: auto;
-	width: 800px;
+	width: 860px;
 }
 
 .diamond {
@@ -21,6 +31,8 @@
 	}
 
 	.journey {
+		animation: runTheBases var(--animation-speed) linear forwards;
+		stroke-dasharray: var(--stroke-amount);
 		stroke-width: 20px;
 	}
 
@@ -30,16 +42,36 @@
 }
 
 .base {
-	fill: var(--secondary-color);
+	fill: #ffffff;
 	stroke: var(--primary-color);
 }
 
 .base.active {
-	stroke-width: 20px;
+	animation: activateBase .3s ease-out forwards;
 }
 
-.base.inactive {
-	fill: #ffffff;
+.date {
+	opacity: .5;
+}
+
+.date.active {
+	animation: fadein 1s ease-out forwards;
+}
+
+.base.firstBase, .date.firstBase {
+	animation-delay: var(--firstBase-animation-delay);
+}
+
+.base.secondBase, .date.secondBase {
+	animation-delay: var(--secondBase-animation-delay);
+}
+
+.base.thirdBase, .date.thirdBase {
+	animation-delay: var(--thirdBase-animation-delay);
+}
+
+.base.homeBase, .date.homeBase {
+	animation-delay: var(--homeBase-animation-delay);
 }
 
 .reading {
@@ -50,4 +82,25 @@
 
 .bold {
 	font-weight: 400;
+}
+
+@keyframes fadein {
+	0% { opacity: .5 }
+	100% { opacity: 1 }
+}
+
+@keyframes runTheBases {
+	0% { stroke-dashoffset: var(--stroke-amount);  }
+	100% { stroke-dashoffset: var(--offset-amount);  }
+}
+
+@keyframes activateBase {
+	0% {
+		fill: #ffffff;
+		stroke-width: 10px;
+	}
+	100% {
+		fill: var(--secondary-color);
+		stroke-width: 20px;
+	}
 }
