@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import './App.css'
+import classes from './App.module.css';
 import Header from './components/Header';
 import Diamond from './components/Diamond';
 import type { Solstice } from './js/solstice.d';
@@ -54,7 +54,7 @@ function App() {
   }, []);
 
   return (
-    <>
+    <div className={classes.wrapper}>
       <Header />
       
       <input type="text" value={searchValue} onChange={handleSearchValue} />
@@ -72,7 +72,7 @@ function App() {
         <h2>What is the Offseason Baseball Solstice?</h2>
         <p>During the regular season, there are certain markers that let you know where you are, like the All-Star Break and the trading deadline.  However, during the off-season, there are no such markers, it's just a cold winter and maybe a countdown until opening day.  The Offseason Baseball Solstice chart helps you visiualise how far into the offseason you are.</p>
       </div>
-    </>
+    </div>
   )
 }
 
