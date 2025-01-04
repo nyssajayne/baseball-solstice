@@ -1,0 +1,53 @@
+@import url('Teams.module.css');
+
+.wrapper {
+	align-items: center;
+	display: flex;
+	gap: 1rem;
+	margin: auto;
+	width: 800px;
+}
+
+.diamond {
+	display: inline-block;
+	margin: auto;
+	position: relative;
+	width: 320px;
+
+	& > svg {
+		height: auto;
+		stroke: var(--primary-color);
+		stroke-width: 10px;
+	}
+
+	.journey {
+		stroke-width: 20px;
+	}
+
+	.complete {
+		opacity: 50%;
+	}
+}
+
+.base {
+	fill: var(--secondary-color);
+	stroke: var(--primary-color);
+}
+
+.base.active {
+	stroke-width: 20px;
+}
+
+.base.inactive {
+	fill: #ffffff;
+}
+
+.reading {
+	display: inline-block;
+	flex-grow: 1;
+	text-align: left;
+}
+
+.bold {
+	font-weight: 400;
+}

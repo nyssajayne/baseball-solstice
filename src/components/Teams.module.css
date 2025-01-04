@@ -1,0 +1,176 @@
+:root {
+	--main-color: #191919;
+}
+
+.athletics {
+	--primary-color: #003831;
+	--secondary-color: #EFB21E;
+	--tertiary-color: #a2aaad;
+}
+
+.pittsburghPirates {
+	--primary-color: #27251F;
+	--secondary-color: #FDB827;
+}
+
+.sanDiegoPadres {
+	--primary-color: #2F241D;
+	--secondary-color: #FFC425;
+}
+
+.seattleMariners {
+	--primary-color: #0C2C56;
+	--secondary-color: #005C5C;
+	--tertiary-color: #C4CED4;
+}
+
+.sanFranciscoGiants {
+	--primary-color: #FD5A1E;
+	--secondary-color: #27251F;
+	--tertiary-color: #EFD19F;
+	--quarternary-color: #AE8F6F;
+}
+
+.stLouisCardinals {
+	--primary-color: #C41E3A;
+	--secondary-color: #0C2340;
+	--tertiary-color: #FEDB00;
+}
+
+.tampaBayRays {
+	--primary-color: #092C5C;
+	--secondary-color: #8FBCE6;
+	--tertiary-color: #F5D130;
+	--quarternary-color: #FFFFFF;
+}
+
+.texasRangers {
+	--primary-color: #003278;
+	--secondary-color: #C0111F;
+}
+
+.torontoBlueJays {
+	--primary-color: #134A8E;
+	--secondary-color: #1D2D5C;
+	--tertiary-color: #E8291C;
+}
+
+.minnesotaTwins {
+	--primary-color: #002B5C;
+	--secondary-color: #D31145;
+	--tertiary-color: #B9975B;
+}
+
+.philadelphiaPhillies {
+	--primary-color: #E81828;
+	--secondary-color: #002d72;
+	--tertiary-color: #FFFFFF;
+}
+
+.atlantaBraves {
+	--primary-color: #CE1141;
+	--secondary-color: #13274F;
+	--tertiary-color: #EAAA00;
+	--quarternary-color: #FFFFFF;
+}
+
+.chicagoWhiteSox {
+	--primary-color: #27251F;
+	--secondary-color: #C4CED4;
+}
+
+.miamiMarlins {
+	--primary-color: #00A3E0;
+	--secondary-color: #EF3340;
+	--tertiary-color: #41748D;
+	--quarternary-color: #000000;
+}
+
+.newYorkYankees {
+	--primary-color: #0C2340;
+	--secondary-color: #C4CED3;
+}
+
+.milwaukeeBrewers {
+	--primary-color: #ffc52f;
+	--secondary-color: #12284b;
+}
+
+.losAngelesAngels {
+	--primary-color: #003263;
+	--secondary-color: #BA0021;
+	--tertiary-color: #862633;
+	--quarternary-color: #C4CED4;
+	--quinary-color: #FFFFFF;
+}
+
+.arizonaDiamondbacks {
+	--primary-color: #A71930;
+	--secondary-color: #E3D4AD;
+}
+
+.baltimoreOrioles {
+	--primary-color: #DF4601;
+	--secondary-color: #000000;
+}
+
+.bostonRedSox {
+	--primary-color: #BD3039;
+	--secondary-color: #0C2340;
+	--tertiary-color: #FFFFFF;
+}
+
+.chicagoCubs {
+	--primary-color: #0E3386;
+	--secondary-color: #CC3433;
+}
+
+.cincinnatiReds {
+	--primary-color: #C6011F;
+	--secondary-color: #000000;
+}
+
+.clevelandGuardians {
+	--primary-color: #00385D;
+	--secondary-color: #E50022;
+	--tertiary-color: #FFFFFF;
+}
+
+.coloradoRockies {
+	--primary-color: #333366;
+	--secondary-color: #C4CED4;
+	--tertiary-color: #131413;
+}
+
+.detroitTigers {
+	--primary-color: #0C2340;
+	--secondary-color: #FA4616;
+}
+
+.houstonAstros {
+	--primary-color: #002D62;
+	--secondary-color: #EB6E1F;
+	--tertiary-color: #F4911E;
+}
+
+.kansasCityRoyals {
+	--primary-color: #004687;
+	--secondary-color: #BD9B60;
+}
+
+.losAngelesDodgers {
+	--primary-color: #005A9C;
+	--secondary-color: #EF3E42;
+	--tertiary-color: #A5ACAF;
+}
+
+.washingtonNationals {
+	--primary-color: #AB0003;
+	--secondary-color: #14225A;
+	--tertiary-color: #FFFFFF;
+}
+
+.newYorkMets {
+	--primary-color: #002D72;
+	--secondary-color: #FF5910;
+}
