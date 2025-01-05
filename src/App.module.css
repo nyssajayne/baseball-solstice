@@ -1,4 +1,59 @@
 .wrapper {
-  max-width: 500px;
+  max-width: 100vw;
+  padding: 1rem;
   text-align: center;
+  transition: height .3s ease-out;
+  width: 1024px;
+}
+
+.h1 {
+  font-family: "Shrikhand", serif;
+  font-size: 3rem;
+  padding: 0 0 .75rem;
+}
+
+.h2 {
+  font-size: 1.5rem;
+  font-weight: 200;
+  padding: 0 0 3rem;
+  transition: height .1s ease-out, opacity .1s ease-out, padding .1s ease-out;
+}
+
+.explainer {
+  height: 0;
+  padding: 3rem 0 0;
+  opacity: 0;
+  transition: height .1s ease-out, opacity .1s ease-out;
+}
+
+.showTeam.wrapper {
+  height: 100vh;
+}
+
+.showTeam .h2 {
+  height: 0;
+  opacity: 0;
+  padding: 0;
+}
+
+.showTeam .explainer {
+  height: auto;
+  opacity: 1;
+}
+
+@media screen and (max-width: 1023px) {
+  .wrapper {
+    width: 500px;
+  }
+}
+
+@media screen and (max-width: 499px) {
+  .h1 {
+    font-size: 2rem;
+  }
+
+  .h2 {
+    font-size: 1.2rem;
+    padding: 0 0 1rem;
+  }
 }

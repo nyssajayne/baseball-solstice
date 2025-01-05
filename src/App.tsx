@@ -1,43 +1,31 @@
 import { useEffect, useState } from 'react'
 import classes from './App.module.css';
-import Header from './components/Header';
+import Logo from './components/Logo';
 import Diamond from './components/Diamond';
+import Select from 'react-select';
 import type { Solstice } from './js/solstice.d';
 import initSolstice from './js/solstice';
 
-interface UiSolstice extends Solstice {
-  showTeam: boolean
-}
-
 function App() {
-  const [teams, setTeams] = useState<UiSolstice[]>([])
-  const [searchValue, setSearchValue] = useState("");
+  const [teams, setTeams] = useState<Solstice[]>([]);
+  const [selectOptions, setSelectOptions] = useState<{ label: string, value: number}[]>();
+  const [showTeam, setShowTeam] = useState<Solstice | undefined>()
 
-  const handleSearchValue = (event: { target: { value: string; }; }) => {
-    const { value } = event.target;
-    setSearchValue(value);
 
-    let lowercaseValue = value;
+  const handleSearchValue = (newValue: any, actionMeta: any) => {
+    const { action } = actionMeta;
 
-    const updateTeam = teams.filter((team) => {
-      let lowercaseName = team.name.toLowerCase();
+    if(action === "select-option") {
+      const { value } = newValue;
 
-      return lowercaseName.includes(lowercaseValue)
-    });
+      let chosenTeam = teams.find((team) => {
+        return team.id === value
+      })
 
-    if(updateTeam.length === 1) {
-      const [ chosenTeam ] = updateTeam;
-
-      setTeams(teams.map((team) => {
-        if(chosenTeam.name === team.name) {
-          team.showTeam = true;
-        }
-        else {
-          team.showTeam = false;
-        }
-
-        return team;
-      }))
+      setShowTeam(chosenTeam)
+    }
+    else if(action === "clear") {
+      setShowTeam(undefined);
     }
   };
 
@@ -45,30 +33,33 @@ function App() {
     initSolstice(2024)
     .then((teams) => {
       console.log(teams);
-      let uiReadyTeams = teams.map((team) => {
-        return { ...team, showTeam: false}
+
+      setTeams(teams)
+
+      let optionTeams = teams.map((team) => {
+        return { value: team.id, label: team.name}
       })
 
-      setTeams(uiReadyTeams)})
+      setSelectOptions(optionTeams);
+
+    })
     .catch((e) => console.error(e));
   }, []);
 
   return (
-    <div className={classes.wrapper}>
-      <Header />
+    <div className={showTeam ? `${classes.showTeam} ${classes.wrapper}` : `${classes.wrapper}`}>
+      <header>
+        <Logo />
+        <h1 className={classes.h1}>Offseason Baseball Solstice Calculator</h1>
+        <h2  className={classes.h2}>Are you closer to your last game of baseball or your next game of baseball this off-season?<br />
+              Search for your team and find out!</h2>
+      </header>
       
-      <input type="text" value={searchValue} onChange={handleSearchValue} />
+      <Select options={selectOptions} onChange={handleSearchValue} isClearable={true} />
 
-      {teams.length > 0 &&
-        teams.map((team) => {
-          if(team.showTeam) {
-            return (
-                <Diamond key={`diamond-${team.id}`} solstice={team}/>
-            )
-          }
-        })
-      }
-      <div>
+      {showTeam && <Diamond key={`diamond-${showTeam.id}`} solstice={showTeam}/>}
+
+      <div className={showTeam ? `${classes.showTeam} ${classes.explainer}` : `${classes.explainer}`}>
         <h2>What is the Offseason Baseball Solstice?</h2>
         <p>During the regular season, there are certain markers that let you know where you are, like the All-Star Break and the trading deadline.  However, during the off-season, there are no such markers, it's just a cold winter and maybe a countdown until opening day.  The Offseason Baseball Solstice chart helps you visiualise how far into the offseason you are.</p>
       </div>

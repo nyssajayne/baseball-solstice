@@ -14,6 +14,10 @@
   margin: 0;
 }
 
+:root {
+  interpolate-size: allow-keywords;
+}
+
 body {
   display: flex;
   font-family: "Martel Sans", serif;
