@@ -1,8 +1,9 @@
 .wrapper {
+  aspect-ratio: 1 / 1;
   display: inline-block;
-  height: 100px;
+/*  height: 100%;*/
   position: relative;
-  width: 100px;
+  width: 100%;
 
   & > svg {
     animation: rotate 20s linear infinite;
@@ -13,15 +14,15 @@
 
   & > svg:first-child {
     animation-direction: reverse;
-    left: 26px;
-    top: 26px;
-    width: 48px;
+    left: 26%;
+    top: 26%;
+    width: 48%;
   }
 
   & > svg:last-child {
     left: 0px;
     top: 0px;
-    width: 100px;
+    width: 100%;
   }
 }
 
