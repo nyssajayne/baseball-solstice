@@ -34,7 +34,6 @@ const roundedTheBase = (solstice: Date) => {
 }
 
 const calculateFeet = (currentPosition: number) => {
-	console.log(currentPosition);
 	return 360 - Math.floor(360 * currentPosition);
 }
 
