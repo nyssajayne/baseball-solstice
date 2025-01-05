@@ -33,9 +33,10 @@ const roundedTheBase = (solstice: Date) => {
 	// return "active"
 }
 
-// const calculateFeet = () => {
-// 	return `feet`;
-// }
+const calculateFeet = (currentPosition: number) => {
+	console.log(currentPosition);
+	return 360 - Math.floor(360 * currentPosition);
+}
 
 function Diamond(props: { solstice: Solstice }) {
 	const { codeName, name, positions, nextPlayTime } = props.solstice;
@@ -43,7 +44,8 @@ function Diamond(props: { solstice: Solstice }) {
 	const firstBase = roundedTheBase(positions.firstSolstice);
 	const secondBase = roundedTheBase(positions.secondSolstice);
 	const thirdBase = roundedTheBase(positions.thirdSolstice);
-	const homeBase = roundedTheBase(nextPlayTime)
+	const homeBase = roundedTheBase(nextPlayTime);
+	const nextBase = calculateFeet(positions.currentPosition);
 
 	useEffect(() => {
 		const { currentPosition } = positions
@@ -76,9 +78,13 @@ function Diamond(props: { solstice: Solstice }) {
 			<div className={classes.reading}>
 				<h3>Baseball Solstice Dates for the {name}</h3>
 				<p className={`${classes.firstBase} ${classes[firstBase]} ${classes.date}`}><span>First Base Solstice:</span> {formatDate(positions.firstSolstice)}</p>
+				{nextBase < 90 && <p>{90 - nextBase}ft until first base</p>}
 				<p className={`${classes.secondBase} ${classes[secondBase]} ${classes.date}`}><span>Second Base Solstice:</span> {formatDate(positions.secondSolstice)}</p>
+				{(nextBase > 90 && nextBase < 180) && <p>{180 - nextBase}ft until second base</p>}
 				<p className={`${classes.thirdBase} ${classes[thirdBase]} ${classes.date}`}><span>Third Base Solstice:</span> {formatDate(positions.thirdSolstice)}</p>
+				{(nextBase > 180 && nextBase < 270) && <p>{270 - nextBase}ft until third base</p>}
 				<p className={`${classes.homeBase} ${classes[homeBase]} ${classes.date}`}><span>Opening Day:</span> {formatDate(nextPlayTime)}</p>
+				{(nextBase > 270 && nextBase < 360) && <p>{360 - nextBase}ft until home base</p>}
 			</div>
 		</div>
 	)

@@ -195,17 +195,6 @@ const getLastPlayEndTime = (season: number, teamId: number) => {
   })
 }
 
-// const calculateEquinox = (last: Date, first: Date) => {
-//   const lastPlay = last.valueOf();
-//   const firstPlay = first.valueOf();
-
-//   let diff = Math.ceil((firstPlay - lastPlay) / 2);
-
-//   let equinox = new Date(lastPlay + diff);
-
-//   return equinox;
-// };
-
 const calculateSolstice = (last: Date, first: Date) => {
   const lastPlay = last.valueOf();
   const firstPlay = first.valueOf();
