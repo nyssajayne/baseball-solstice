@@ -47,35 +47,42 @@ function App() {
   }, []);
 
   return (
-    <div className={classes.card}>
-      <div className={classes.innerCard}>
-        <div className={classes.logoWrapper}>
-          <Logo />
-        </div>
-        <h1 className={classes.h1}>Offseason Baseball Solstice Calculator</h1>
-        <div className={classes.h2Wrapper}>
-          <h2 className={classes.h2}>Are you closer to your last game of baseball or your next game of baseball this off-season?<br />
-               Search for your team and find out!</h2>
-        </div>
+    <div className={showTeam ? `${classes.cardWrapper} ${classes.showTeam} ${classes[showTeam.codeName]}` : `${classes.cardWrapper}`}>
+      <div className={classes.card}>
+        <div className={`${classes.innerCard} ${classes.sideOne}`}>
+          <div className={classes.logoWrapper}>
+            <Logo />
+          </div>
+          <h1 className={classes.h1}>Offseason Baseball Solstice Schedule</h1>
+          <div className={classes.h2Wrapper}>
+            <h2 className={classes.h2}>Are you closer to your last game of baseball or your next game of baseball this off-season?<br />
+                 Search for your team and find out!</h2>
+          </div>
 
-        <Select 
-          className={classes.select}
-          isClearable={true} 
-          menuPlacement='top'
-          onChange={handleSearchValue}
-          options={selectOptions} />
+          <Select 
+            className={classes.select}
+            isClearable={true} 
+            menuPlacement='top'
+            onChange={handleSearchValue}
+            options={selectOptions}
+            menuIsOpen={true} />
+        </div>
+      </div>
+      <div className={classes.card}>
+        <div className={`${classes.innerCard} ${classes.sideTwo}`}>
+          <div className={classes.headerWrapper}>
+            <div className={classes.logoWrapper}>
+              <Logo />
+            </div>
+            <div className={classes.titleWrapper}>
+              <h1 className={classes.h1}>Offseason Baseball Solstice Schedule</h1>
+            </div>
+          </div>
+          {showTeam && <Diamond key={`diamond-${showTeam.id}`} solstice={showTeam}/>}
+          <button className={classes.clearTeam} onClick={() => setShowTeam(undefined)}>See Another Team</button>
+        </div>
       </div>
     </div>
-    // <div className={showTeam ? `${classes.showTeam} ${classes.wrapper}` : `${classes.wrapper}`}>
-    //   <header>
-    //     <Logo />
-    //     <h1 className={classes.h1}>Offseason Baseball Solstice Calculator</h1>
-    //     <h2  className={classes.h2}>Are you closer to your last game of baseball or your next game of baseball this off-season?<br />
-    //           Search for your team and find out!</h2>
-    //   </header>
-      
-    //   <Select options={selectOptions} onChange={handleSearchValue} isClearable={true} />
-
     //   {showTeam && <Diamond key={`diamond-${showTeam.id}`} solstice={showTeam}/>}
 
     //   <div className={showTeam ? `${classes.showTeam} ${classes.explainer}` : `${classes.explainer}`}>

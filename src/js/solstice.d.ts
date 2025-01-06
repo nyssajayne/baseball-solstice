@@ -1,7 +1,8 @@
 export interface Team {
 	id: number;
 	name: string,
-	codeName: string
+	codeName: string,
+	clubName: string
 }
 
 interface Game {

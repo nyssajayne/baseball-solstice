@@ -95,7 +95,7 @@ const getMLBTeams = () => {
     .then((json) => {
       const { teams } = json;
 
-      let nameAndId = teams.map((team: { id: number, name: string}) => {
+      let nameAndId = teams.map((team: { id: number, name: string, clubName: string }) => {
         const splitName = team.name.split(" ");
 
         let codeName = splitName.map((name, index) => {
@@ -108,7 +108,7 @@ const getMLBTeams = () => {
           return newName;
         }).join("").replace(/\./, "");
 
-        return { id: team.id, name: team.name, codeName };
+        return { id: team.id, name: team.name, codeName, clubName: team.clubName };
       });
 
       resolve(nameAndId);

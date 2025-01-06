@@ -17,6 +17,14 @@ const nthNumber = (number: number) => {
 };
 
 const formatDate = (originalDate: Date) => {
+	// const month = originalDate.toLocaleString("default", { month: "short"});
+	// // const month = originalDate.getMonth();
+	// const date = originalDate.getDate();
+	// const year = originalDate.toLocaleString("default", { year: "2-digit"});
+	// const time = originalDate.toLocaleString("default", { timeStyle: "short"});
+
+	// return `${month}-${date}-${year}, ${time}`;
+
 	const day = originalDate.toLocaleString("default", { weekday: "long"});
 	const month = originalDate.toLocaleString("default", { month: "long"});
 	const date = originalDate.getDate();
@@ -38,7 +46,7 @@ const calculateFeet = (currentPosition: number) => {
 }
 
 function Diamond(props: { solstice: Solstice }) {
-	const { codeName, name, positions, nextPlayTime } = props.solstice;
+	const { codeName, positions, nextPlayTime, clubName } = props.solstice;
 	const diamondRef = useRef(null);
 	const firstBase = roundedTheBase(positions.firstSolstice);
 	const secondBase = roundedTheBase(positions.secondSolstice);
@@ -53,7 +61,7 @@ function Diamond(props: { solstice: Solstice }) {
 		let totalLength = diamond.getTotalLength();
 		let offSetlength = totalLength * currentPosition;
 		// let offSetlength = 0;
-		let animationSpeed = `${12 * currentPosition}s`;
+		let animationSpeed = `${8 * currentPosition}s`;
 		// let animationSpeed = `${12}s`;
 
 		document.documentElement.style.setProperty('--animation-speed', `${animationSpeed}`);
@@ -75,15 +83,15 @@ function Diamond(props: { solstice: Solstice }) {
 				</svg>
 			</div>
 			<div className={classes.reading}>
-				<h3>Baseball Solstice Dates for the {name}</h3>
-				<p className={`${classes.firstBase} ${classes[firstBase]} ${classes.date}`}><span>First Base Solstice:</span> {formatDate(positions.firstSolstice)}</p>
-				{nextBase < 90 && <p>{90 - nextBase}ft until first base</p>}
-				<p className={`${classes.secondBase} ${classes[secondBase]} ${classes.date}`}><span>Second Base Solstice:</span> {formatDate(positions.secondSolstice)}</p>
-				{(nextBase > 90 && nextBase < 180) && <p>{180 - nextBase}ft until second base</p>}
-				<p className={`${classes.thirdBase} ${classes[thirdBase]} ${classes.date}`}><span>Third Base Solstice:</span> {formatDate(positions.thirdSolstice)}</p>
-				{(nextBase > 180 && nextBase < 270) && <p>{270 - nextBase}ft until third base</p>}
-				<p className={`${classes.homeBase} ${classes[homeBase]} ${classes.date}`}><span>Opening Day:</span> {formatDate(nextPlayTime)}</p>
-				{(nextBase > 270 && nextBase < 360) && <p>{360 - nextBase}ft until home base</p>}
+				<h3>Baseball Solstice Dates for the {clubName}</h3>
+				<p className={`${classes.firstBase} ${classes[firstBase]} ${classes.date}`}><span className={classes.bold}>1B:</span> {formatDate(positions.firstSolstice)}</p>
+				{nextBase < 90 && <p className={classes.bold}>{90 - nextBase}ft until first base!</p>}
+				<p className={`${classes.secondBase} ${classes[secondBase]} ${classes.date}`}><span className={classes.bold}>2B:</span> {formatDate(positions.secondSolstice)}</p>
+				{(nextBase > 90 && nextBase < 180) && <p className={classes.bold}>{180 - nextBase}ft until second base!</p>}
+				<p className={`${classes.thirdBase} ${classes[thirdBase]} ${classes.date}`}><span className={classes.bold}>3B:</span> {formatDate(positions.thirdSolstice)}</p>
+				{(nextBase > 180 && nextBase < 270) && <p className={classes.bold}>{270 - nextBase}ft until third base!</p>}
+				<p className={`${classes.homeBase} ${classes[homeBase]} ${classes.date}`}><span className={classes.bold}>Opening Day:</span> {formatDate(nextPlayTime)}</p>
+				{(nextBase > 270 && nextBase < 360) && <p className={classes.bold}>{360 - nextBase}ft until home base!</p>}
 			</div>
 		</div>
 	)

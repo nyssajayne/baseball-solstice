@@ -1,11 +1,11 @@
 @import url('Teams.module.css');
 
 :root {
-	--animation-speed: 12s;
-	--firstBase-animation-delay: 2.85s;
-	--secondBase-animation-delay: 5.85s;
-	--thirdBase-animation-delay: 8.85s;
-	--homeBase-animation-delay: 11.85s;
+	--animation-speed: 4s;
+	--firstBase-animation-delay: 1.1s;
+	--secondBase-animation-delay: 3.1s;
+	--thirdBase-animation-delay: 5.1s;
+	--homeBase-animation-delay: 7.1s;
 	--offset-amount: 0;
 	--stroke-amount: 0;
 }
@@ -14,12 +14,12 @@
 	align-items: center;
 	animation: foldDown 1s .3s ease-out forwards;
 	display: flex;
-	flex-wrap: wrap;
-	gap: 1rem;
+	flex-direction: column;
+	flex-grow: 1;
 	height: 0;
-	margin: auto;
 	max-width: 100%;
 	opacity: 0;
+	padding: 2cqw;
 	width: 860px;
 }
 
@@ -38,12 +38,12 @@
   }
 }
 
-
 .diamond {
+	border: 3px solid var(--primary-color);
 	display: inline-block;
-	margin: 3rem auto 0;
+	padding: 2cqw;
 	position: relative;
-	width: 320px;
+	width: 100%;
 
 	& > svg {
 		height: auto;
@@ -96,9 +96,16 @@
 }
 
 .reading {
-	display: inline-block;
+	display: flex;
+	flex-direction: column;
 	flex-grow: 1;
+	padding: 2cqw 0 0;
 	text-align: left;
+	width: 100%;
+
+	h3 {
+		font-size: 4.5cqw;
+	}
 }
 
 .bold {
@@ -123,19 +130,5 @@
 	100% {
 		fill: var(--secondary-color);
 		stroke-width: 20px;
-	}
-}
-
-@media screen and (max-width: 499px) {
-	.diamond {
-		margin: 2rem auto 0;
-	}
-
-	.reading {
-		text-align: center;
-
-		p span {
-			display: block;
-		}
 	}
 }
