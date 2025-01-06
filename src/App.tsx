@@ -65,7 +65,8 @@ function App() {
             menuPlacement='top'
             onChange={handleSearchValue}
             options={selectOptions}
-            menuIsOpen={true} />
+            // menuIsOpen={true}
+          />
         </div>
       </div>
       <div className={classes.card}>
