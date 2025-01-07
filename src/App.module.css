@@ -207,6 +207,13 @@ body {
   border: 3px solid #191919;
   text-align: center;
 
+  button {
+    align-self: flex-end;
+    background: none;
+    border: 0;
+    font-family: "Shrikhand";
+  }
+
   .copy {
     display: flex;
     flex-direction: column;

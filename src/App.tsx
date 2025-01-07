@@ -76,6 +76,7 @@ function App() {
       </div>
       <div className={classes.card}>
         <div className={`${classes.innerCard} ${classes.about}`}>
+          <button onClick={handleNavValue}>Close</button>
           <div className={classes.copy}>
             <h2>About the Offseason Baseball Solstice Schedule</h2>
             <p>Are you staring out the window and waiting for spring? Do you find yourself dreaming of green grass, warm sunshine, and the crack of the bat? We get it. That's why we created the Offseason Baseball Solstice Schedule! Find out exactly how long it is until you can trade your winter coat for a jersey and head to the ballpark. Join us on the celestial base path as we race through the winter towards a head-first slide into Opening Day.</p>
