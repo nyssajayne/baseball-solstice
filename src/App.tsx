@@ -65,9 +65,11 @@ function App() {
             menuPlacement='top'
             onChange={handleSearchValue}
             options={selectOptions}
-            // menuIsOpen={true}
           />
         </div>
+      </div>
+      <div className={classes.card}>
+        <div className={`${classes.innerCard} ${classes.about}`}><p>About</p></div>
       </div>
       <div className={classes.card}>
         <div className={`${classes.innerCard} ${classes.sideTwo}`}>

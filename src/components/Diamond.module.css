@@ -52,8 +52,9 @@
 	}
 
 	.journey {
-		animation: runTheBases var(--animation-speed) linear forwards;
+		animation: runTheBases var(--animation-speed) 1s linear forwards;
 		stroke-dasharray: var(--stroke-amount);
+		stroke-dashoffset: var(--stroke-amount);
 		stroke-width: 20px;
 	}
 
@@ -80,19 +81,19 @@
 }
 
 .base.firstBase, .date.firstBase {
-	animation-delay: var(--firstBase-animation-delay);
+	animation-delay: calc(1s + var(--firstBase-animation-delay));
 }
 
 .base.secondBase, .date.secondBase {
-	animation-delay: var(--secondBase-animation-delay);
+	animation-delay: calc(1s + var(--secondBase-animation-delay));
 }
 
 .base.thirdBase, .date.thirdBase {
-	animation-delay: var(--thirdBase-animation-delay);
+	animation-delay: calc(1s + var(--thirdBase-animation-delay));
 }
 
 .base.homeBase, .date.homeBase {
-	animation-delay: var(--homeBase-animation-delay);
+	animation-delay: calc(1s + var(--homeBase-animation-delay));
 }
 
 .reading {

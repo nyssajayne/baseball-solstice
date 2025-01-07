@@ -5,76 +5,91 @@ const getOpeningDay = (name: string) => {
     {
       away: "New York Mets",
       home: "Houston Astros",
-      firstPlay: "2025-03-27T13:10:00-06:00"
+      timeZone: "US/Central",
+      firstPlay: "2025-03-27T13:10:00-05:00"
     },
     {
       away: "San Francisco Giants",
       home: "Cincinnati Reds",
+      timeZone: "US/Eastern",
       firstPlay: "2025-03-27T13:10:00-05:00"
     },
     {
       away: "Boston Red Sox",
       home: "Texas Rangers",
+      timeZone: "US/Central",
       firstPlay: "2025-03-27T13:10:00-06:00"
     },
     {
       away: "Colorado Rockies",
       home: "Tampa Bay Rays",
+      timeZone: "US/Eastern", 
       firstPlay: "2025-03-27T13:10:00-05:00"
     },
     {
       away: "Minnesota Twins",
       home: "St. Louis Cardinals",
+      timeZone: "US/Central",
       firstPlay: "2025-03-27T13:10:00-06:00"
     },
     {
       away: "Baltimore Orioles",
       home: "Toronto Blue Jays",
+      timeZone: "US/Eastern",
       firstPlay: "2025-03-27T13:10:00-05:00"
     },
     {
       away: "Los Angeles Angels",
       home: "Chicago White Sox",
+      timeZone: "US/Eastern",
       firstPlay: "2025-03-27T13:10:00-05:00"
     },
     {
       away: "Philadelphia Phillies",
       home: "Washington Nationals",
+      timeZone: "US/Eastern",
       firstPlay: "2025-03-27T13:10:00-05:00"
     },
     {
       away: "Chicago Cubs",
       home: "Arizona Diamondbacks",
+      timeZone: "US/Arizona",
       firstPlay: "2025-03-27T13:10:00-07:00"
     },
     {
       away: "Pittsburgh Pirates",
       home: "Miami Marlins",
+      timeZone: "US/Eastern",
       firstPlay: "2025-03-27T13:10:00-05:00"
     },
     {
       away: "Detroit Tigers",
       home: "Los Angeles Dodgers",
+      timeZone: "US/Pacific",
       firstPlay: "2025-03-27T13:10:00-08:00"
     },
     {
       away: "Milwaukee Brewers",
       home: "New York Yankees",
+      timeZone: "US/Eastern",
       firstPlay: "2025-03-27T13:10:00-05:00"
     },
     {
       away: "Athletics",
       home: "Seattle Mariners",
+      timeZone: "US/Eastern",
       firstPlay: "2025-03-27T13:10:00-05:00"
     },
     {
       away: "Cleveland Guardians",
       home: "Kansas City Royals",
+      timeZone: "US/Central",
       firstPlay: "2025-03-27T13:10:00-06:00"
     },
     {
       away: "Atlanta Braves",
       home: "San Diego Padres",
+      timeZone: "US/Pacific",
       firstPlay: "2025-03-27T13:10:00-08:00"
     }
   ];
@@ -82,7 +97,8 @@ const getOpeningDay = (name: string) => {
   let foundGame = games.find((game) => game.away === name || game.home === name);
 
   if(foundGame) {
-    return foundGame.firstPlay;
+    const { firstPlay, timeZone } = foundGame
+    return { firstPlay, timeZone };
   }
 
   return false
@@ -217,9 +233,9 @@ const initSolstice = async (season: number) => {
   return Promise.all(
     teams.map(async (team) => {
       const { id, name } = team;
-      const nextPlayTime = new Date(getOpeningDay(name) as string);
+      const nextPlayTime = getOpeningDay(name);
       const lastPlayTime = new Date(await getLastPlayEndTime(season, id));
-      const positions = calculateSolstice(lastPlayTime, nextPlayTime);
+      const positions = nextPlayTime ? calculateSolstice(lastPlayTime, new Date(nextPlayTime.firstPlay)) : false;
 
       return {
         ...team,

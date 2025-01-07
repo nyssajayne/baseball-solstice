@@ -8,6 +8,7 @@ export interface Team {
 interface Game {
 	home: string;
 	away: string;
+	timeZoneOffset: string;
 	firstPlay: string
 }
 
@@ -19,7 +20,7 @@ export interface Positions {
 }
 
 export interface Solstice extends Team {
-	nextPlayTime: Date,
+	nextPlayTime: { firstPlay: string, timeZone: string } | false,
     lastPlayTime: Date,
     positions: Positions
 }
