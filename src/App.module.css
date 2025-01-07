@@ -1,5 +1,14 @@
 @import url('./components/Teams.module.css');
 
+:root {
+  --light-color: #fcfbf8;
+  --dark-color: #001433;
+}
+
+body {
+  background-color: var(--light-color);
+}
+
 .cardWrapper {
   height: calc(75vw / (2.5 / 3.5));
   max-height: calc(100vh - 1rem);
@@ -9,7 +18,7 @@
   container-type: inline-size;
 
   & >:nth-child(1) {
-    background-color: #ffffff;
+    background-color: var(--light-color);
     border: 3px solid #191919;
     z-index: 2;
   }
@@ -17,7 +26,7 @@
   & >:nth-child(2) {
     transform: rotate(20deg);
     z-index: 1;
-    border: 3px solid #191919;
+    border: 3px solid var(--dark-color);
     text-align: right;
   }
 
@@ -36,7 +45,7 @@
   position: absolute;
   top: 0;
 /*  transform-style: preserve-3d;*/
-  transition: transform 1s ease-out;
+  transition: margin 1s ease-out, transform 1s ease-out;
   width: 100%;
 }
 
@@ -69,7 +78,7 @@
 }
 
 .sideOne {
-  border: 3px solid #191919;
+  border: 3px solid var(--dark-color);
   padding: 2cqw;
   z-index: 1;
 
@@ -93,8 +102,8 @@
   }
 
   .h2Wrapper {
-    background-color: #ffffff;
-    border: 3px solid #191919;
+    background-color: var(--light-color);
+    border: 3px solid var(--dark-color);
     padding: 1cqh;
     text-align: center;
     transform: skew(7.5deg, -7.5deg);
@@ -116,7 +125,7 @@
     }
 
     [class$="-singleValue"], [class$="-placeholder"] {
-      color: #191919;
+      color: var(--dark-color);
       font-size: 4.75cqw;
       padding: 2cqw;
     }
@@ -131,7 +140,7 @@
 }
 
 .sideTwo {
-  background-color: #ffffff;
+  background-color: var(--light-color);
   padding: 0 0 2cqw;
   z-index: 2;
 
@@ -166,12 +175,58 @@
     &:hover {
       cursor: pointer;
     }
+
+    & span {
+      color: var(--secondary-color);
+      filter: invert(1) brightness(0);
+    }
   }
+}
+
+.showAbout {
+  .card:not(.card:has(.about)) {
+    margin-top: 100vw;
+  }
+
+  .card:has(.about) {
+    transform: rotate(0);
+
+    .returnBtn {
+      display: block;
+    }
+  }
+}
+
+.hideAbout {
+  
 }
 
 .about {
   border: 3px solid #191919;
-  padding: 2cqw;
+  text-align: center;
+
+  nav {
+    text-align: right;
+    width: 100%;
+
+    button {
+      background: none;
+      border: 0;
+      font-family: "Shrikhand";
+    }
+
+    .returnBtn {
+      display: none;
+    }
+  }
+
+  .copy {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: center;
+    padding: 4cqw;
+  }
 }
 
 @media screen and (max-width: 522px) {
@@ -180,20 +235,47 @@
   }
 
   .cardWrapper {
-    width: 98vw;
+    width: 90vw;
     height: auto;
-    margin: 1vw 0 0;
+    margin: 8vw 0 0;
     max-width: none;
     max-height: none;
+
+    & >:nth-child(1) {
+      transform: translate(-3vw, 7vw);
+    }
+    & >:nth-child(2) {
+      transform: translate(3vw, -6vw) rotate(0);
+    }
+    & >:nth-child(3) {
+      transform: translate(-3vw, 7vw) rotateY(-180deg);
+    }
+  }
+
+  .cardWrapper.showTeam {
+    & > :nth-child(1) {
+      transform: translate(-3vw, 7vw) rotateY(-180deg);
+    }
+    & > :nth-child(3) {
+      transform: translate(-3vw, 7vw) rotateY(0);
+    }
   }
 
   .card {
     height: auto;
-    min-height: calc(98vw / (2.5 / 3.5));
+    min-height: calc(08vw / (2.5 / 3.5));
   }
 
   .innerCard {
-    min-height: calc((98vw / (2.5 / 3.5) - 4cqw));
+    min-height: calc((90vw / (2.5 / 3.5) - 4cqw));
+  }
+}
+
+@media screen and (min-width: 523px) {
+  body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
   }
 }
 

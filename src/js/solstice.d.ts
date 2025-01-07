@@ -20,7 +20,7 @@ export interface Positions {
 }
 
 export interface Solstice extends Team {
-	nextPlayTime: { firstPlay: string, timeZone: string } | false,
+	nextPlayTime: { firstPlay: string, timeZone: string },
     lastPlayTime: Date,
     positions: Positions
 }

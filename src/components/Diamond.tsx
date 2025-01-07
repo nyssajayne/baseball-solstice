@@ -17,16 +17,12 @@ const nthNumber = (number: number) => {
 };
 
 const formatDate = (originalDate: Date, timeZone?: string | undefined) => {
-	console.log(originalDate)
-	console.log(timeZone)
 	const day = originalDate.toLocaleString("default", { weekday: "long"});
 	const month = originalDate.toLocaleString("default", { month: "long"});
 	const date = originalDate.getDate();
 	const ordinal = nthNumber(date);
 	const year = originalDate.getFullYear();
 	const time = originalDate.toLocaleString("en-US", { hour: "numeric", minute: "numeric", timeZone: timeZone, timeZoneName: "short" });
-
-	console.log(`${day}, ${month} ${date}${ordinal} ${year}, ${time}`);
 
 	return `${day}, ${month} ${date}${ordinal} ${year}, ${time}`;
 }
@@ -43,12 +39,13 @@ const calculateFeet = (currentPosition: number) => {
 
 function Diamond(props: { solstice: Solstice }) {
 	const { codeName, positions, nextPlayTime, clubName } = props.solstice;
-	console.log(nextPlayTime);
+	const { firstPlay, timeZone } = nextPlayTime;
+
 	const diamondRef = useRef(null);
 	const firstBase = roundedTheBase(positions.firstSolstice);
 	const secondBase = roundedTheBase(positions.secondSolstice);
 	const thirdBase = roundedTheBase(positions.thirdSolstice);
-	const homeBase = nextPlayTime ? roundedTheBase(new Date(nextPlayTime.firstPlay)) : false;
+	const homeBase = roundedTheBase(new Date(firstPlay));
 	const nextBase = calculateFeet(positions.currentPosition);
 
 	useEffect(() => {
@@ -87,7 +84,7 @@ function Diamond(props: { solstice: Solstice }) {
 				{(nextBase > 90 && nextBase < 180) && <p className={classes.bold}>{180 - nextBase}ft until second base!</p>}
 				<p className={`${classes.thirdBase} ${classes[thirdBase]} ${classes.date}`}><span className={classes.bold}>3B:</span> {formatDate(positions.thirdSolstice)}</p>
 				{(nextBase > 180 && nextBase < 270) && <p className={classes.bold}>{270 - nextBase}ft until third base!</p>}
-				<p className={`${classes.homeBase} ${classes[homeBase]} ${classes.date}`}><span className={classes.bold}>Opening Day:</span> {formatDate(new Date(nextPlayTime.firstPlay), nextPlayTime.timeZone)}</p>
+				<p className={`${classes.homeBase} ${classes[homeBase]} ${classes.date}`}><span className={classes.bold}>Opening Day:</span> {formatDate(new Date(firstPlay), timeZone)}</p>
 				{(nextBase > 270 && nextBase < 360) && <p className={classes.bold}>{360 - nextBase}ft until home base!</p>}
 			</div>
 		</div>

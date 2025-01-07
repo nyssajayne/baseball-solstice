@@ -10,7 +10,7 @@ function App() {
   const [teams, setTeams] = useState<Solstice[]>([]);
   const [selectOptions, setSelectOptions] = useState<{ label: string, value: number}[]>();
   const [showTeam, setShowTeam] = useState<Solstice | undefined>()
-
+  const [about, setAbout] = useState("hideAbout");
 
   const handleSearchValue = (newValue: any, actionMeta: any) => {
     const { action } = actionMeta;
@@ -28,6 +28,10 @@ function App() {
       setShowTeam(undefined);
     }
   };
+
+  function handleNavValue() {
+    setAbout(about === "hideAbout" ? "showAbout" : "hideAbout");
+  }
 
   useEffect(() => {
     initSolstice(2024)
@@ -47,7 +51,7 @@ function App() {
   }, []);
 
   return (
-    <div className={showTeam ? `${classes.cardWrapper} ${classes.showTeam} ${classes[showTeam.codeName]}` : `${classes.cardWrapper}`}>
+    <div className={showTeam ? `${classes.cardWrapper} ${classes[about]} ${classes.showTeam} ${classes[showTeam.codeName]}` : `${classes.cardWrapper} ${classes[about]}`}>
       <div className={classes.card}>
         <div className={`${classes.innerCard} ${classes.sideOne}`}>
           <div className={classes.logoWrapper}>
@@ -69,7 +73,16 @@ function App() {
         </div>
       </div>
       <div className={classes.card}>
-        <div className={`${classes.innerCard} ${classes.about}`}><p>About</p></div>
+        <div className={`${classes.innerCard} ${classes.about}`}>
+          <nav><button className={classes.aboutBtn} onClick={handleNavValue}>About</button></nav>
+          <div className={classes.copy}>
+            <h2>About the Offseason Baseball Solstice Schedule</h2>
+            <p>Are you staring out the window and waiting for spring? Do you find yourself dreaming of green grass, warm sunshine, and the crack of the bat? We get it. That's why we created the Offseason Baseball Solstice Schedule! Find out exactly how long it is until you can trade your winter coat for a jersey and head to the ballpark. Join us on the celestial base path as we race through the winter towards a head-first slide into Opening Day.</p>
+            <p></p>
+            <p>While this is a Javascript project, many thanks to Tood Roberts and the documentation contained in his <a href="https://github.com/toddrob99/MLB-StatsAPI" target="/_blank">MLB-StatsAPI</a> repo.  A real home-run.</p>
+          </div>
+          <nav><button className={classes.returnBtn} onClick={handleNavValue}>Return to the Scheudle</button></nav>
+        </div>
       </div>
       <div className={classes.card}>
         <div className={`${classes.innerCard} ${classes.sideTwo}`}>
@@ -82,17 +95,10 @@ function App() {
             </div>
           </div>
           {showTeam && <Diamond key={`diamond-${showTeam.id}`} solstice={showTeam}/>}
-          <button className={classes.clearTeam} onClick={() => setShowTeam(undefined)}>See Another Team</button>
+          <button className={classes.clearTeam} onClick={() => setShowTeam(undefined)}><span>See Another Team</span></button>
         </div>
       </div>
     </div>
-    //   {showTeam && <Diamond key={`diamond-${showTeam.id}`} solstice={showTeam}/>}
-
-    //   <div className={showTeam ? `${classes.showTeam} ${classes.explainer}` : `${classes.explainer}`}>
-    //     <h2>What is the Offseason Baseball Solstice?</h2>
-    //     <p>During the regular season, there are certain markers that let you know where you are, like the All-Star Break and the trading deadline.  However, during the off-season, there are no such markers, it's just a cold winter and maybe a countdown until opening day.  The Offseason Baseball Solstice chart helps you visiualise how far into the offseason you are.</p>
-    //   </div>
-    // </div>
   )
 }
 
