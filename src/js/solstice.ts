@@ -12,43 +12,43 @@ const getOpeningDay = (name: string) => {
       away: "San Francisco Giants",
       home: "Cincinnati Reds",
       timeZone: "US/Eastern",
-      firstPlay: "2025-03-27T13:10:00-05:00"
+      firstPlay: "2025-03-27T13:10:00-04:00"
     },
     {
       away: "Boston Red Sox",
       home: "Texas Rangers",
       timeZone: "US/Central",
-      firstPlay: "2025-03-27T13:10:00-06:00"
+      firstPlay: "2025-03-27T13:10:00-05:00"
     },
     {
       away: "Colorado Rockies",
       home: "Tampa Bay Rays",
       timeZone: "US/Eastern", 
-      firstPlay: "2025-03-27T13:10:00-05:00"
+      firstPlay: "2025-03-27T13:10:00-04:00"
     },
     {
       away: "Minnesota Twins",
       home: "St. Louis Cardinals",
       timeZone: "US/Central",
-      firstPlay: "2025-03-27T13:10:00-06:00"
+      firstPlay: "2025-03-27T13:10:00-05:00"
     },
     {
       away: "Baltimore Orioles",
       home: "Toronto Blue Jays",
       timeZone: "US/Eastern",
-      firstPlay: "2025-03-27T13:10:00-05:00"
+      firstPlay: "2025-03-27T13:10:00-04:00"
     },
     {
       away: "Los Angeles Angels",
       home: "Chicago White Sox",
       timeZone: "US/Eastern",
-      firstPlay: "2025-03-27T13:10:00-05:00"
+      firstPlay: "2025-03-27T13:10:00-04:00"
     },
     {
       away: "Philadelphia Phillies",
       home: "Washington Nationals",
       timeZone: "US/Eastern",
-      firstPlay: "2025-03-27T13:10:00-05:00"
+      firstPlay: "2025-03-27T13:10:00-04:00"
     },
     {
       away: "Chicago Cubs",
@@ -60,37 +60,37 @@ const getOpeningDay = (name: string) => {
       away: "Pittsburgh Pirates",
       home: "Miami Marlins",
       timeZone: "US/Eastern",
-      firstPlay: "2025-03-27T13:10:00-05:00"
+      firstPlay: "2025-03-27T13:10:00-04:00"
     },
     {
       away: "Detroit Tigers",
       home: "Los Angeles Dodgers",
       timeZone: "US/Pacific",
-      firstPlay: "2025-03-27T13:10:00-08:00"
+      firstPlay: "2025-03-27T13:10:00-07:00"
     },
     {
       away: "Milwaukee Brewers",
       home: "New York Yankees",
       timeZone: "US/Eastern",
-      firstPlay: "2025-03-27T13:10:00-05:00"
+      firstPlay: "2025-03-27T13:10:00-04:00"
     },
     {
       away: "Athletics",
       home: "Seattle Mariners",
       timeZone: "US/Eastern",
-      firstPlay: "2025-03-27T13:10:00-05:00"
+      firstPlay: "2025-03-27T13:10:00-04:00"
     },
     {
       away: "Cleveland Guardians",
       home: "Kansas City Royals",
       timeZone: "US/Central",
-      firstPlay: "2025-03-27T13:10:00-06:00"
+      firstPlay: "2025-03-27T13:10:00-05:00"
     },
     {
       away: "Atlanta Braves",
       home: "San Diego Padres",
       timeZone: "US/Pacific",
-      firstPlay: "2025-03-27T13:10:00-08:00"
+      firstPlay: "2025-03-27T13:10:00-07:00"
     }
   ];
 
