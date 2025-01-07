@@ -3,28 +3,44 @@
 :root {
   --light-color: #fcfbf8;
   --dark-color: #001433;
+  --card-changing-speed: .5s;
 }
 
 body {
   background-color: var(--light-color);
 }
 
+  nav {
+    width: 100%;
+
+    button {
+      background: none;
+      border: 0;
+      font-family: "Shrikhand";
+    }
+
+    .returnBtn {
+      display: none;
+    }
+  }
+
 .cardWrapper {
-  height: calc(75vw / (2.5 / 3.5));
-  max-height: calc(100vh - 1rem);
-  max-width: calc((100vh - 1rem) * (2.5 / 3.5));
+  height: calc(90vw / (2.5 / 3.5));
+  max-height: calc(100vh - 2rem);
+  max-width: calc((100vh - 2rem) * (2.5 / 3.5));
   position: relative;
-  width:75vw;
+  width:90vw;
   container-type: inline-size;
 
   & >:nth-child(1) {
     background-color: var(--light-color);
     border: 3px solid #191919;
+    transform: rotateY(0);
     z-index: 3;
   }
 
   & >:nth-child(2) {
-    transform: rotate(20deg);
+/*    transform: rotate(20deg);*/
     z-index: 1;
     border: 3px solid var(--dark-color);
     text-align: right;
@@ -45,17 +61,28 @@ body {
   position: absolute;
   top: 0;
 /*  transform-style: preserve-3d;*/
-  transition: margin 1s ease-out, transform 1s ease-out;
+  transform: rotateY(-180deg);
+/*  transition: height var(--card-changing-speed) ease-out, transform var(--card-changing-speed) ease-out;*/
+  transition: transform var(--card-changing-speed) ease-out;
   width: 100%;
 }
 
-.showTeam.cardWrapper {
+.showTeam .cardWrapper {
   & >:first-child {
     transform: rotateY(-180deg);
   }
 
   & >:last-child {
-    position: absolute;
+    transform: rotateY(0deg);
+  }
+}
+
+.showAbout .cardWrapper {
+  .card {
+    transform: rotateY(-180deg);
+  }
+
+  & >:nth-child(2) {
     transform: rotateY(0deg);
   }
 }
@@ -74,6 +101,7 @@ body {
   justify-content: space-between;
   overflow: hidden;
   position: relative;
+/*  transition: height var(--card-changing-speed) ease-out;*/
   width: 100%;
 }
 
@@ -183,42 +211,9 @@ body {
   }
 }
 
-.showAbout {
-  .card:not(.card:has(.about)) {
-    margin-top: 100vw;
-  }
-
-  .card:has(.about) {
-    transform: rotate(0);
-
-    .returnBtn {
-      display: block;
-    }
-  }
-}
-
-.hideAbout {
-  
-}
-
 .about {
   border: 3px solid #191919;
   text-align: center;
-
-  nav {
-    text-align: right;
-    width: 100%;
-
-    button {
-      background: none;
-      border: 0;
-      font-family: "Shrikhand";
-    }
-
-    .returnBtn {
-      display: none;
-    }
-  }
 
   .copy {
     display: flex;
@@ -231,40 +226,35 @@ body {
 
 @media screen and (max-width: 522px) {
   body {
+    min-height: none;
+    min-width: none;
     place-items: start;
   }
 
   .cardWrapper {
     width: 90vw;
     height: auto;
-    margin: 8vw 0 0;
+    margin: 5vw 0 0;
     max-width: none;
     max-height: none;
 
-    & >:nth-child(1) {
-      transform: translate(-3vw, 7vw);
-    }
-    & >:nth-child(2) {
-      transform: translate(3vw, -6vw) rotate(0);
-    }
-    & >:nth-child(3) {
-      transform: translate(-3vw, 7vw) rotateY(-180deg);
-    }
-  }
-
-  .cardWrapper.showTeam {
-    & > :nth-child(1) {
-      transform: translate(-3vw, 7vw) rotateY(-180deg);
-    }
-    & > :nth-child(3) {
-      transform: translate(-3vw, 7vw) rotateY(0);
+    & >:first-child {
+      height: auto;
     }
   }
 
   .card {
     height: auto;
-    min-height: calc(08vw / (2.5 / 3.5));
+    min-height: calc(80vw / (2.5 / 3.5));
   }
+
+/*  .card:has(.sideTwo) {
+    height: 100%;
+  }
+
+  .showTeam .card:has(.sideTwo) {
+    height: auto;
+  }*/
 
   .innerCard {
     min-height: calc((90vw / (2.5 / 3.5) - 4cqw));
@@ -278,42 +268,3 @@ body {
     overflow: hidden;
   }
 }
-
-/*.explainer {
-  height: 0;
-  padding: 3rem 0 0;
-  opacity: 0;
-  transition: height .1s ease-out, opacity .1s ease-out;
-}
-
-.showTeam.wrapper {
-  height: 100vh;
-}
-
-.showTeam .h2 {
-  height: 0;
-  opacity: 0;
-  padding: 0;
-}
-
-.showTeam .explainer {
-  height: auto;
-  opacity: 1;
-}
-
-@media screen and (max-width: 1023px) {
-  .wrapper {
-    width: 500px;
-  }
-}
-
-@media screen and (max-width: 499px) {
-  .h1 {
-    font-size: 2rem;
-  }
-
-  .h2 {
-    font-size: 1.2rem;
-    padding: 0 0 1rem;
-  }
-}*/

@@ -12,13 +12,13 @@
 
 .wrapper {
 	align-items: center;
-	animation: foldDown 1s .3s ease-out forwards;
+/*	animation: foldDown 1s .3s ease-out forwards;*/
 	display: flex;
 	flex-direction: column;
 	flex-grow: 1;
-	height: 0;
+/*	height: 0;*/
 	max-width: 100%;
-	opacity: 0;
+/*	opacity: 0;*/
 	padding: 2cqw;
 	width: 860px;
 }

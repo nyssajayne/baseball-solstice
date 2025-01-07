@@ -51,7 +51,9 @@ function App() {
   }, []);
 
   return (
-    <div className={showTeam ? `${classes.cardWrapper} ${classes[about]} ${classes.showTeam} ${classes[showTeam.codeName]}` : `${classes.cardWrapper} ${classes[about]}`}>
+    <div className={showTeam ? `${classes.wrapper} ${classes[about]} ${classes.showTeam} ${classes[showTeam.codeName]}` : `${classes.wrapper} ${classes[about]}`}>
+    <nav><button onClick={handleNavValue}>About the Schedule</button></nav>
+    <div className={classes.cardWrapper}>
       <div className={classes.card}>
         <div className={`${classes.innerCard} ${classes.sideOne}`}>
           <div className={classes.logoWrapper}>
@@ -74,14 +76,12 @@ function App() {
       </div>
       <div className={classes.card}>
         <div className={`${classes.innerCard} ${classes.about}`}>
-          <nav><button className={classes.aboutBtn} onClick={handleNavValue}>About</button></nav>
           <div className={classes.copy}>
             <h2>About the Offseason Baseball Solstice Schedule</h2>
             <p>Are you staring out the window and waiting for spring? Do you find yourself dreaming of green grass, warm sunshine, and the crack of the bat? We get it. That's why we created the Offseason Baseball Solstice Schedule! Find out exactly how long it is until you can trade your winter coat for a jersey and head to the ballpark. Join us on the celestial base path as we race through the winter towards a head-first slide into Opening Day.</p>
             <p></p>
             <p>While this is a Javascript project, many thanks to Tood Roberts and the documentation contained in his <a href="https://github.com/toddrob99/MLB-StatsAPI" target="/_blank">MLB-StatsAPI</a> repo.  A real home-run.</p>
           </div>
-          <nav><button className={classes.returnBtn} onClick={handleNavValue}>Return to the Schedule</button></nav>
         </div>
       </div>
       <div className={classes.card}>
@@ -98,6 +98,7 @@ function App() {
           <button className={classes.clearTeam} onClick={() => setShowTeam(undefined)}><span>See Another Team</span></button>
         </div>
       </div>
+    </div>
     </div>
   )
 }
