@@ -79,8 +79,10 @@ function App() {
           <div className={classes.copy}>
             <h2>About the Offseason Baseball Solstice Schedule</h2>
             <p>Are you staring out the window and waiting for spring? Do you find yourself dreaming of green grass, warm sunshine, and the crack of the bat? We get it. That's why we created the Offseason Baseball Solstice Schedule! Find out exactly how long it is until you can trade your winter coat for a jersey and head to the ballpark. Join us on the celestial base path as we race through the winter towards a head-first slide into Opening Day.</p>
-            <p></p>
+            <p>&nbsp;</p>
             <p>While this is a Javascript project, many thanks to Tood Roberts and the documentation contained in his <a href="https://github.com/toddrob99/MLB-StatsAPI" target="/_blank">MLB-StatsAPI</a> repo.  A real home-run.</p>
+            <p>&nbsp;</p>
+            <p>* An assumption has been made that the first pitch on Opening Day will be thrown at 1:10pm local time of where the game will be played.</p>
           </div>
         </div>
       </div>
