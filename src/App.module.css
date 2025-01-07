@@ -20,7 +20,7 @@ body {
   & >:nth-child(1) {
     background-color: var(--light-color);
     border: 3px solid #191919;
-    z-index: 2;
+    z-index: 3;
   }
 
   & >:nth-child(2) {

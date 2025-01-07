@@ -81,7 +81,7 @@ function App() {
             <p></p>
             <p>While this is a Javascript project, many thanks to Tood Roberts and the documentation contained in his <a href="https://github.com/toddrob99/MLB-StatsAPI" target="/_blank">MLB-StatsAPI</a> repo.  A real home-run.</p>
           </div>
-          <nav><button className={classes.returnBtn} onClick={handleNavValue}>Return to the Scheudle</button></nav>
+          <nav><button className={classes.returnBtn} onClick={handleNavValue}>Return to the Schedule</button></nav>
         </div>
       </div>
       <div className={classes.card}>
