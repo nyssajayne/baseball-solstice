@@ -22,6 +22,8 @@
 	--primary-color: #0C2C56;
 	--secondary-color: #005C5C;
 	--tertiary-color: #C4CED4;
+
+	--secondary-color: #C4CED4;
 }
 
 .sanFranciscoGiants {
@@ -29,12 +31,17 @@
 	--secondary-color: #27251F;
 	--tertiary-color: #EFD19F;
 	--quarternary-color: #AE8F6F;
+
+	--primary-color: #27251F;
+	--secondary-color: #FD5A1E;
 }
 
 .stLouisCardinals {
 	--primary-color: #C41E3A;
 	--secondary-color: #0C2340;
 	--tertiary-color: #FEDB00;
+
+	--secondary-color: #FEDB00;
 }
 
 .tampaBayRays {
@@ -53,6 +60,8 @@
 	--primary-color: #134A8E;
 	--secondary-color: #1D2D5C;
 	--tertiary-color: #E8291C;
+
+	--secondary-color: #E8291C;
 }
 
 .minnesotaTwins {
@@ -65,6 +74,9 @@
 	--primary-color: #E81828;
 	--secondary-color: #002d72;
 	--tertiary-color: #FFFFFF;
+
+	--primary-color: #002d72;
+	--secondary-color: #E81828;
 }
 
 .atlantaBraves {
@@ -72,6 +84,8 @@
 	--secondary-color: #13274F;
 	--tertiary-color: #EAAA00;
 	--quarternary-color: #FFFFFF;
+
+	--secondary-color: #EAAA00;
 }
 
 .chicagoWhiteSox {
@@ -94,6 +108,9 @@
 .milwaukeeBrewers {
 	--primary-color: #ffc52f;
 	--secondary-color: #12284b;
+
+	--primary-color: #12284b;
+	--secondary-color: #ffc52f;
 }
 
 .losAngelesAngels {
@@ -112,12 +129,18 @@
 .baltimoreOrioles {
 	--primary-color: #DF4601;
 	--secondary-color: #000000;
+
+	--primary-color: #000000;
+	--secondary-color: #DF4601;
 }
 
 .bostonRedSox {
 	--primary-color: #BD3039;
 	--secondary-color: #0C2340;
 	--tertiary-color: #FFFFFF;
+
+	--primary-color: #0C2340;
+	--secondary-color: #BD3039;
 }
 
 .chicagoCubs {
@@ -128,6 +151,9 @@
 .cincinnatiReds {
 	--primary-color: #C6011F;
 	--secondary-color: #000000;
+
+	--primary-color: #000000;
+	--secondary-color: #C6011F;
 }
 
 .clevelandGuardians {
@@ -168,6 +194,9 @@
 	--primary-color: #AB0003;
 	--secondary-color: #14225A;
 	--tertiary-color: #FFFFFF;
+
+	--primary-color: #14225A;
+	--secondary-color: #AB0003;
 }
 
 .newYorkMets {

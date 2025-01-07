@@ -40,7 +40,6 @@ body {
   }
 
   & >:nth-child(2) {
-/*    transform: rotate(20deg);*/
     z-index: 1;
     border: 3px solid var(--dark-color);
     text-align: right;
@@ -156,13 +155,6 @@ body {
       color: var(--dark-color);
       font-size: 4.75cqw;
       padding: 2cqw;
-    }
-  }
-
-
-  @container (max-width: 390px) {
-    .h1 {
-
     }
   }
 }
