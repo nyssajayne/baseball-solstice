@@ -39,6 +39,7 @@ input, button, textarea, select {
 }
 
 p, h1, h2, h3, h4, h5, h6, button {
+  font-weight: normal;
   line-height: calc(1em + 0.5rem);
   overflow-wrap: break-word;
 }
