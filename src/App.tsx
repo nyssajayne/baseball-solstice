@@ -1,4 +1,4 @@
-import { act, useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import classes from './App.module.css';
 import Logo from './components/Logo';
 import Diamond from './components/Diamond';
