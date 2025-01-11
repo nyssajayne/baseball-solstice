@@ -12,34 +12,16 @@
 
 .wrapper {
 	align-items: center;
-/*	animation: foldDown 1s .3s ease-out forwards;*/
 	display: flex;
 	flex-direction: column;
 	flex-grow: 1;
-/*	height: 0;*/
 	max-width: 100%;
-/*	opacity: 0;*/
-	padding: 2cqw;
+	padding: 2cqw 2cqw 0;
 	width: 860px;
 }
 
-@keyframes foldDown {
-  0% {
-    height: 0;
-    opacity: 0;
-  }
-  50% { 
-    height: auto;
-    opacity: 0;
-  }
-  100% {
-    height: auto;
-    opacity: 1;
-  }
-}
-
 .diamond {
-	border: 3px solid var(--primary-color);
+	border: 3px solid var(--outline-color);
 	display: inline-block;
 	padding: 2cqw;
 	position: relative;
@@ -47,7 +29,7 @@
 
 	& > svg {
 		height: auto;
-		stroke: var(--primary-color);
+		stroke: var(--outline-color);
 		stroke-width: 10px;
 	}
 
@@ -64,8 +46,8 @@
 }
 
 .base {
-	fill: #ffffff;
-	stroke: var(--primary-color);
+	fill: var(--background-color);
+	stroke: var(--outline-color);
 }
 
 .base.active {
@@ -125,11 +107,11 @@
 
 @keyframes activateBase {
 	0% {
-		fill: #ffffff;
+		fill: var(--background-color);
 		stroke-width: 10px;
 	}
 	100% {
-		fill: var(--secondary-color);
+		fill: var(--accent-color);
 		stroke-width: 20px;
 	}
 }

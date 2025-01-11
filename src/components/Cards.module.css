@@ -1,0 +1,16 @@
+.cards {
+  height: calc(90vw / (2.5 / 3.5));
+  max-height: calc(100vh - 2rem);
+  max-width: calc((100vh - 2rem) * (2.5 / 3.5));
+  position: relative;
+  width:90vw;
+  container-type: inline-size;
+}
+
+@media screen and (max-width: 522px) {
+  .cards {
+    width: 90vw;
+    height: auto;
+    margin: 5vw 0 0;
+  }
+}

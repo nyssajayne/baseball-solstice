@@ -1,13 +1,16 @@
 @import url('./components/Teams.module.css');
 
 :root {
-  --light-color: #fcfbf8;
-  --dark-color: #001433;
   --card-changing-speed: .5s;
+  --accent-color: #fcfbf8;
+  --background-color: #fcfbf8;
+  --outline-color: #001433;
+  --text-color: #001433;
 }
 
 body {
-  background-color: var(--light-color);
+  background-color: var(--background-color);
+  width: 100vw;
 }
 
   nav {
@@ -16,73 +19,142 @@ body {
     button {
       background: none;
       border: 0;
+      color: var(--text-color);
       font-family: "Shrikhand";
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+
+.wrapper {
+  & > div {
+    
+    /* home */
+    & > div:nth-child(1) {
+
+      & > div {
+        background-color: transparent;
+      }
+
+    .logoWrapper {
+        left: 50%;
+        position: absolute;
+        opacity: .075;
+        top: -10%;
+        transform: translate(-50%, 0);
+        width: 150%;
+        z-index: -1;
+      }
+
+      .h1 {
+        padding: 0 0 .75rem;
+      }
+      
+      .h1 {
+        font-size: 14cqw;
+        padding: 3cqh 0 0;
+      }
+
+      .h2Wrapper {
+        background-color: var(--background-color);
+        border: 3px solid var(--outline-color);
+        padding: 1cqh;
+        text-align: center;
+        transform: skew(7.5deg, -7.5deg);
+        transform-origin: center center;
+        width: 200%;
+
+        .h2 {
+          font-size: 4.75cqw;
+          transform: translate(50%, 0);
+          width: 50%;
+        }
+      }
+
+      .select {
+        width: 100%; 
+
+        * {
+          line-height: calc(1em + 0.5rem);
+        }
+
+        [class$="-singleValue"], [class$="-placeholder"] {
+          color: var(--text-color);
+          font-size: 4.75cqw;
+          padding: 2cqw;
+        }
+      }
     }
 
-    .returnBtn {
-      display: none;
+    /* about */
+    & > div:nth-child(2) {
+      text-align: center;
+
+      button {
+        align-self: flex-end;
+        background: none;
+        border: 0;
+        font-family: "Shrikhand";
+      }
+
+      .copy {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        justify-content: center;
+        padding: 4cqw;
+      }
     }
-  }
 
-.cardWrapper {
-  height: calc(90vw / (2.5 / 3.5));
-  max-height: calc(100vh - 2rem);
-  max-width: calc((100vh - 2rem) * (2.5 / 3.5));
-  position: relative;
-  width:90vw;
-  container-type: inline-size;
+    /* stats */
+    & > div:nth-child(3) {
+      background-color: var(--outline-color);
 
-  & >:nth-child(1) {
-    background-color: var(--light-color);
-    border: 3px solid #191919;
-    transform: rotateY(0);
-    z-index: 3;
-  }
+      & > div {
+        border-width: 0;
+        padding: 0 0 2cqw;
+      }
 
-  & >:nth-child(2) {
-    z-index: 1;
-    border: 3px solid var(--dark-color);
-    text-align: right;
-  }
+      .headerWrapper {
+        align-items: center;
+        border: 3px solid var(--outline-color);
+        border-width: 0 0 3px;
+        display: flex;
+        width: 100%;
+      }
 
-  & >:nth-child(3) {
-    background-color: var(--primary-color);
-    transform: rotateY(-180deg);
-    z-index: 2;
-  }
-}
+      .logoWrapper {
+        border: 3px solid var(--outline-color);
+        border-width: 0 3px 0 0;
+        width: 12cqw;
+      }
 
-.card {
-  backface-visibility: hidden;
-  height: 100%;
-  left: 0;
-  padding: 2cqw;
-  position: absolute;
-  top: 0;
-/*  transform-style: preserve-3d;*/
-  transform: rotateY(-180deg);
-/*  transition: height var(--card-changing-speed) ease-out, transform var(--card-changing-speed) ease-out;*/
-  transition: transform var(--card-changing-speed) ease-out;
-  width: 100%;
-}
+      .titleWrapper {
+        flex-grow: 1;
 
-.showTeam .cardWrapper {
-  & >:first-child {
-    transform: rotateY(-180deg);
-  }
+        .h1 {
+          font-size: 4cqw;
+        }
+      }
 
-  & >:last-child {
-    transform: rotateY(0deg);
-  }
-}
+      .clearTeam {
+        background-color: var(--accent-color);
+        border: 0;
+        padding: 2cqw;
+        width: calc(100% - 4cqw);
 
-.showAbout .cardWrapper {
-  .card {
-    transform: rotateY(-180deg);
-  }
+        &:hover {
+          cursor: pointer;
+        }
 
-  & >:nth-child(2) {
-    transform: rotateY(0deg);
+        & span {
+          color: var(--outline-color);
+          filter: invert(1) brightness(0);
+        }
+      }
+    }
   }
 }
 
@@ -91,172 +163,21 @@ body {
   text-align: center;
 }
 
-.innerCard {
-  align-items: center;
-  border-radius: 2cqw;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  justify-content: space-between;
-  overflow: hidden;
-  position: relative;
-/*  transition: height var(--card-changing-speed) ease-out;*/
-  width: 100%;
-}
-
-.sideOne {
-  border: 3px solid var(--dark-color);
-  padding: 2cqw;
-  z-index: 1;
-
-  .logoWrapper {
-    left: 50%;
-    position: absolute;
-    opacity: .075;
-    top: -10%;
-    transform: translate(-50%, 0);
-    width: 150%;
-    z-index: -1;
-  }
-
-  .h1 {
-    padding: 0 0 .75rem;
-  }
-  
-  .h1 {
-    font-size: 14cqw;
-    padding: 3cqh 0 0;
-  }
-
-  .h2Wrapper {
-    background-color: var(--light-color);
-    border: 3px solid var(--dark-color);
-    padding: 1cqh;
-    text-align: center;
-    transform: skew(7.5deg, -7.5deg);
-    transform-origin: center center;
-    width: 200%;
-
-    .h2 {
-      font-size: 4.75cqw;
-      transform: translate(50%, 0);
-      width: 50%;
-    }
-  }
-
-  .select {
-    width: 100%; 
-
-    * {
-      line-height: calc(1em + 0.5rem);
-    }
-
-    [class$="-singleValue"], [class$="-placeholder"] {
-      color: var(--dark-color);
-      font-size: 4.75cqw;
-      padding: 2cqw;
-    }
-  }
-}
-
-.sideTwo {
-  background-color: var(--light-color);
-  padding: 0 0 2cqw;
-  z-index: 2;
-
-  .headerWrapper {
-    align-items: center;
-    border: 3px solid var(--primary-color);
-    border-width: 0 0 3px;
-    display: flex;
-    width: 100%;
-  }
-
-  .logoWrapper {
-    border: 3px solid var(--primary-color);
-    border-width: 0 3px 0 0;
-    width: 12cqw;
-  }
-
-  .titleWrapper {
-    flex-grow: 1;
-
-    .h1 {
-      font-size: 4cqw;
-    }
-  }
-
-  .clearTeam {
-    background-color: var(--secondary-color);
-    border: 0;
-    padding: 2cqw;
-    width: calc(100% - 4cqw);
-
-    &:hover {
-      cursor: pointer;
-    }
-
-    & span {
-      color: var(--secondary-color);
-      filter: invert(1) brightness(0);
-    }
-  }
-}
-
-.about {
-  border: 3px solid #191919;
-  text-align: center;
-
-  button {
-    align-self: flex-end;
-    background: none;
-    border: 0;
-    font-family: "Shrikhand";
-  }
-
-  .copy {
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-    justify-content: center;
-    padding: 4cqw;
-  }
-}
-
 @media screen and (max-width: 522px) {
   body {
-    min-height: none;
-    min-width: none;
+    min-height: 0;
+    min-width: 0;
     place-items: start;
   }
 
-  .cardWrapper {
-    width: 90vw;
-    height: auto;
-    margin: 5vw 0 0;
-    max-width: none;
-    max-height: none;
+  nav {
+    text-align: center;
+  }
 
-    & >:first-child {
-      height: auto;
+  .wrapper {
+    .h2Wrapper {
+      margin: 8cqw 0;
     }
-  }
-
-  .card {
-    height: auto;
-    min-height: calc(80vw / (2.5 / 3.5));
-  }
-
-/*  .card:has(.sideTwo) {
-    height: 100%;
-  }
-
-  .showTeam .card:has(.sideTwo) {
-    height: auto;
-  }*/
-
-  .innerCard {
-    min-height: calc((90vw / (2.5 / 3.5) - 4cqw));
   }
 }
 

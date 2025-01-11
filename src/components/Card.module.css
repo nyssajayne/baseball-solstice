@@ -1,0 +1,48 @@
+.card {
+  backface-visibility: hidden;
+  background-color: var(--background-color);
+  border: 3px solid var(--outline-color);
+  height: 100%;
+  left: 0;
+  padding: 2cqw;
+  position: absolute;
+  top: 0;
+  transform: rotateY(-180deg);
+  transition: transform var(--card-changing-speed) ease-out;
+  width: 100%;
+}
+
+.card.active {
+  transform: rotateY(0);
+  z-index: 99;
+}
+
+.inner {
+  align-items: center;
+  background-color: var(--background-color);
+  border: 3px solid var(--outline-color);
+  border-radius: 2cqw;
+  display: none;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+  max-height: 100%;
+  overflow: hidden;
+  padding: 2cqw;
+  position: relative;
+  width: 100%;
+}
+
+.active .inner {
+  display: flex;
+}
+
+@media screen and (max-width: 522px) {
+  .card {
+    height: auto;
+  }
+
+  .inner {
+    
+  }
+}

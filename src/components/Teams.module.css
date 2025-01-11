@@ -1,205 +1,172 @@
-:root {
-	--primary-color: #191919;
-}
-
 .athletics {
-	--primary-color: #003831;
-	--secondary-color: #EFB21E;
+	--outline-color: #003831;
+	--accent-color: #EFB21E;
 	--tertiary-color: #a2aaad;
 }
 
 .pittsburghPirates {
-	--primary-color: #27251F;
-	--secondary-color: #FDB827;
+	--outline-color: #27251F;
+	--accent-color: #FDB827;
 }
 
 .sanDiegoPadres {
-	--primary-color: #2F241D;
-	--secondary-color: #FFC425;
+	--outline-color: #2F241D;
+	--accent-color: #FFC425;
 }
 
 .seattleMariners {
-	--primary-color: #0C2C56;
-	--secondary-color: #005C5C;
-	--tertiary-color: #C4CED4;
-
-	--secondary-color: #C4CED4;
+	--outline-color: #0C2C56;
+/*	--secondary-color: #005C5C;*/
+	--accent-color: #C4CED4;
 }
 
 .sanFranciscoGiants {
-	--primary-color: #FD5A1E;
-	--secondary-color: #27251F;
-	--tertiary-color: #EFD19F;
-	--quarternary-color: #AE8F6F;
-
-	--primary-color: #27251F;
-	--secondary-color: #FD5A1E;
+	--accent-color: #FD5A1E;
+	--outline-color: #27251F;
+	/*--tertiary-color: #EFD19F;
+	--quarternary-color: #AE8F6F;*/
 }
 
 .stLouisCardinals {
-	--primary-color: #C41E3A;
-	--secondary-color: #0C2340;
-	--tertiary-color: #FEDB00;
-
-	--secondary-color: #FEDB00;
+	--outline-color: #C41E3A;
+/*	--secondary-color: #0C2340;*/
+	--accent-color: #FEDB00;
 }
 
 .tampaBayRays {
-	--primary-color: #092C5C;
-	--secondary-color: #8FBCE6;
-	--tertiary-color: #F5D130;
-	--quarternary-color: #FFFFFF;
+	--outline-color: #092C5C;
+	--accent-color: #8FBCE6;
+	/*--tertiary-color: #F5D130;
+	--quarternary-color: #FFFFFF;*/
 }
 
 .texasRangers {
-	--primary-color: #003278;
-	--secondary-color: #C0111F;
+	--outline-color: #003278;
+	--accent-color: #C0111F;
 }
 
 .torontoBlueJays {
-	--primary-color: #134A8E;
-	--secondary-color: #1D2D5C;
-	--tertiary-color: #E8291C;
-
-	--secondary-color: #E8291C;
+	--outline-color: #134A8E;
+/*	--secondary-color: #1D2D5C;*/
+	--accent-color: #E8291C;
 }
 
 .minnesotaTwins {
-	--primary-color: #002B5C;
-	--secondary-color: #D31145;
-	--tertiary-color: #B9975B;
+	--outline-color: #002B5C;
+	--accent-color: #D31145;
+/*	--tertiary-color: #B9975B;*/
 }
 
 .philadelphiaPhillies {
-	--primary-color: #E81828;
-	--secondary-color: #002d72;
-	--tertiary-color: #FFFFFF;
-
-	--primary-color: #002d72;
-	--secondary-color: #E81828;
+	--outline-color: #002d72;
+	--accent-color: #E81828;
+/*	--tertiary-color: #FFFFFF;*/
 }
 
 .atlantaBraves {
-	--primary-color: #CE1141;
-	--secondary-color: #13274F;
-	--tertiary-color: #EAAA00;
-	--quarternary-color: #FFFFFF;
-
-	--secondary-color: #EAAA00;
+	--outline-color: #CE1141;
+/*	--secondary-color: #13274F;*/
+	--accent-color: #EAAA00;
+/*	--quarternary-color: #FFFFFF;*/
 }
 
 .chicagoWhiteSox {
-	--primary-color: #27251F;
-	--secondary-color: #C4CED4;
+	--outline-color: #27251F;
+	--accent-color: #C4CED4;
 }
 
 .miamiMarlins {
-	--primary-color: #00A3E0;
-	--secondary-color: #EF3340;
-	--tertiary-color: #41748D;
-	--quarternary-color: #000000;
+	--outline-color: #00A3E0;
+	--accent-color: #EF3340;
+	/*--tertiary-color: #41748D;
+	--quarternary-color: #000000;*/
 }
 
 .newYorkYankees {
-	--primary-color: #0C2340;
-	--secondary-color: #C4CED3;
+	--outline-color: #0C2340;
+	--accent-color: #C4CED3;
 }
 
 .milwaukeeBrewers {
-	--primary-color: #ffc52f;
-	--secondary-color: #12284b;
-
-	--primary-color: #12284b;
-	--secondary-color: #ffc52f;
+	--outline-color: #12284b;
+	--accent-color: #ffc52f;
 }
 
 .losAngelesAngels {
-	--primary-color: #003263;
-	--secondary-color: #BA0021;
-	--tertiary-color: #862633;
+	--outline-color: #003263;
+	--accent-color: #BA0021;
+	/*--tertiary-color: #862633;
 	--quarternary-color: #C4CED4;
-	--quinary-color: #FFFFFF;
+	--quinary-color: #FFFFFF;*/
 }
 
 .arizonaDiamondbacks {
-	--primary-color: #A71930;
-	--secondary-color: #E3D4AD;
+	--outline-color: #A71930;
+	--accent-color: #E3D4AD;
 }
 
 .baltimoreOrioles {
-	--primary-color: #DF4601;
-	--secondary-color: #000000;
-
-	--primary-color: #000000;
-	--secondary-color: #DF4601;
+	--outline-color: #000000;
+	--accent-color: #DF4601;
 }
 
 .bostonRedSox {
-	--primary-color: #BD3039;
-	--secondary-color: #0C2340;
+	--outline-color: #0C2340;
+	--accent-color: #BD3039;
 	--tertiary-color: #FFFFFF;
-
-	--primary-color: #0C2340;
-	--secondary-color: #BD3039;
 }
 
 .chicagoCubs {
-	--primary-color: #0E3386;
-	--secondary-color: #CC3433;
+	--outline-color: #0E3386;
+	--accent-color: #CC3433;
 }
 
 .cincinnatiReds {
-	--primary-color: #C6011F;
-	--secondary-color: #000000;
-
-	--primary-color: #000000;
-	--secondary-color: #C6011F;
+	--outline-color: #000000;
+	--accent-color: #C6011F;
 }
 
 .clevelandGuardians {
-	--primary-color: #00385D;
-	--secondary-color: #E50022;
-	--tertiary-color: #FFFFFF;
+	--outline-color: #00385D;
+	--accent-color: #E50022;
+/*	--tertiary-color: #FFFFFF;*/
 }
 
 .coloradoRockies {
-	--primary-color: #333366;
-	--secondary-color: #C4CED4;
-	--tertiary-color: #131413;
+	--outline-color: #333366;
+	--accent-color: #C4CED4;
+/*	--tertiary-color: #131413;*/
 }
 
 .detroitTigers {
-	--primary-color: #0C2340;
-	--secondary-color: #FA4616;
+	--outline-color: #0C2340;
+	--accent-color: #FA4616;
 }
 
 .houstonAstros {
-	--primary-color: #002D62;
-	--secondary-color: #EB6E1F;
-	--tertiary-color: #F4911E;
+	--outline-color: #002D62;
+	--accent-color: #EB6E1F;
+/*	--tertiary-color: #F4911E;*/
 }
 
 .kansasCityRoyals {
-	--primary-color: #004687;
-	--secondary-color: #BD9B60;
+	--outline-color: #004687;
+	--accent-color: #BD9B60;
 }
 
 .losAngelesDodgers {
-	--primary-color: #005A9C;
-	--secondary-color: #EF3E42;
-	--tertiary-color: #A5ACAF;
+	--outline-color: #005A9C;
+	--accent-color: #EF3E42;
+/*	--tertiary-color: #A5ACAF;*/
 }
 
 .washingtonNationals {
-	--primary-color: #AB0003;
-	--secondary-color: #14225A;
+	--outline-color: #14225A;
+	--accent-color: #AB0003;
 	--tertiary-color: #FFFFFF;
-
-	--primary-color: #14225A;
-	--secondary-color: #AB0003;
 }
 
 .newYorkMets {
-	--primary-color: #002D72;
-	--secondary-color: #FF5910;
+	--outline-color: #002D72;
+	--accent-color: #FF5910;
 }
